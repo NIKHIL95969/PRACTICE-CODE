@@ -25,7 +25,7 @@ int binaryS(int arr[], int n, int k){
     return -1;
 }
 int main(){
-    int arr[8] = {1,3,3,3,3,3,6,7};
+    int arr[8] = {1,2,3,4,5,6,7,10};
     cout << "Element 3 is present at index " << binaryS(arr, 8, 3)<<endl;
     return 0;
 
