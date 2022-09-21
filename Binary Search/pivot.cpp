@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// to find the pivot in an array
 int pivotArr(int arr[], int n){
 
     int s =0;
