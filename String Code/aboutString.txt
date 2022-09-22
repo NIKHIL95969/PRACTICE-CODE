@@ -24,3 +24,4 @@ Note: we use cin.ignore() for ignore the curser position at current place help t
 
 ### For good practice 
     nameofstring.push_back(str[i]);
+    // 
