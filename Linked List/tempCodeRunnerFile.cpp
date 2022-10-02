@@ -1,12 +1,4 @@
-#include<iostream>
-using namespace std;
-
-
-class Node{
-    public:
-    int data;
-    Node* next;
-}
-int main(){
-    Node* obj;
-    int *ptr -
+    // InsertAtTail(tail, 3);
+    // InsertAtHead(head, 17);
+    // InsertAtHead(head, 6);
+    // InsertAtHead(head, 37);

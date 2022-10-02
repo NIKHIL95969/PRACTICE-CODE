@@ -20,19 +20,6 @@ void  InsertAtTail(Node* &tail, int val){
     tail->next = newNode;
     tail = newNode;
 
-    // if (head == NULL )
-    // {
-    //     head = newNode;
-    //     return;
-    // }
-
-    // Node* temp = head;
-    // while (temp->next!=NULL)
-    // {
-    //     temp = temp->next;
-    // }
-    // temp->next = newNode;
-
 }
 void InsertAtHead(Node* &head, int val){
     Node* newNode = new Node(val);
@@ -66,35 +53,19 @@ bool search(Node* head, int s){
 
     return false;
 }
-void deleteN(Node* &head, int val){
-    if (head==NULL)
+Node* rec(Node* &head){
+    if (head==NULL || head->next==NULL)
     {
-        return;
+        return head;
     }
-    if (head->next==NULL)
-    {
-        deleteN(head);
-        return;
-    }
-    
-    
-    Node* temp = head;
-    if (val== temp->data )
-    {
-        head = temp->next;
-        delete temp;
-        return;
-    }
-    
-    while (temp->next->data!= val)
-    {
-        temp = temp->next;
-    }
-    Node* todelete = temp->next;
-    temp->next = temp->next->next;
-    delete todelete;
-    
-
+    cout << head->data <<endl;
+    Node* newH = rec(head->next);
+     //cout << " " << head->data <<endl;
+    head->next->next = head;
+    cout <<head->data<< " " << head <<endl;
+    head->next = NULL;
+    cout << newH <<endl;
+    return newH;
 }
 int main(){
     Node* head = new Node(0);
@@ -102,15 +73,11 @@ int main(){
     InsertAtTail(tail, 1);
     InsertAtTail(tail, 2);
     InsertAtTail(tail, 3);
-    display(head);
     InsertAtHead(head, 17);
     InsertAtHead(head, 6);
     InsertAtHead(head, 37);
     display(head);
-    deleteN(head, 37);
-    cout << endl;
-    display(head);
-    cout << search(head, 5) <<endl;
-
+    Node* newhead = rec(head);
+    display(newhead);
     return 0;
 }
