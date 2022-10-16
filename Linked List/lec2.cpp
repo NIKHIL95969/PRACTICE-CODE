@@ -73,7 +73,7 @@ void deleteN(Node* &head, int val){
     }
     if (head->next==NULL)
     {
-        deleteN(head);
+        //deleteN(head);
         return;
     }
     
