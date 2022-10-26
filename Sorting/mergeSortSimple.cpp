@@ -1,61 +1,76 @@
 #include<bits/stdc++.h>
 using namespace std;
-const int N = 1e5+10;
-int a[N];
 
-void merge(int l, int r, int mid){
-    // Left array
-    int l_sz = mid-l+1;
-    int L[l_sz+1];
-    // Right arrat
-    int r_sz =(r-mid);
-    int R[r_sz+1] ;
 
-    for (int i = 0; i < l_sz; i++)
+void merge(int a[], int s,int mid ,int e){
+    // Left array and right array
+    // step 1
+    int len1 = mid-s+1;
+    int* first = new int(len1);
+
+    int len2 = e-mid;
+    int* second = new int(len2);
+
+    // copy values
+    // step 2
+    for (int i = 0; i < len1; i++)
     {
-        L[i] = a[i+l];
+        first[i] = a[i+s];
     }
-    for (int i = 0; i < r_sz; i++)
+    for (int j = 0; j < len2; j++)
     {
-        R[i] = a[i+mid+1];
+        second[j] = a[j+mid+1];
     }
-    L[l_sz] = R[r_sz] = INT_MAX;
-    int l_i = 0;
-    int r_i = 0;
-    for (int i = l; i <=r ; i++)
+    // step 3
+    // merge 2 array
+    int index1 =0;
+    int index2 =0;
+    int MainArrIndex = s;
+    while (index1<len1 && index2<len2)
     {
-        if (L[l_i]<=R[r_i])
-        {
-            a[l] = L[l-i];
-            l_i++;
+        if(first[index1] < second[index2]){
+            a[MainArrIndex++] = first[index1++];
         }
         else
         {
-            a[i] = R[r_i];
-            r_i++;
-        } 
+            a[MainArrIndex++] = second[index2++];
+        }
+        
     }
+    // step4 
+    // put all remaining values of left and right array
+    while (index1<len1)
+    {
+        a[MainArrIndex++] = first[index1++];
+    }
+    while (index2<len2)
+    {
+        a[MainArrIndex++] = second[index2++];
+    }
+    
+    delete []first;
+    delete []second;
+    
 }
-void mergeSort(int l, int r){
-    if (l==r)
+void mergeSort(int a[], int l, int r){
+    if (l>=r)
     {
         return;
     }
     
-    int mid = (l+r)/2;
-    mergeSort(l,mid);
-    mergeSort(mid+1,r);
-    merge(l,r,mid);
+    int mid = l+(r-l)/2;
+    mergeSort(a, l,mid);
+    mergeSort(a, mid+1,r);
+
+    merge(a, l,mid,r);
+    
 }
 int main(){
 
-    int n;
-    cin >> n;
-    for (int i = 0; i < n; i++)
-    {
-        cin >> a[i];
-    }
-    mergeSort(0, n-1);
+    int a[] = {5,2,4,1,3};
+    int n  = sizeof(a)/sizeof(a[0]);
+    cout<< "Sorted array is : " << endl;
+    mergeSort(a,0, n-1);
     for (int i = 0; i < n; i++)
     {
         cout << a[i] <<" ";
