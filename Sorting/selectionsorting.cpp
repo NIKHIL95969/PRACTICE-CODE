@@ -17,7 +17,7 @@ int main(){
         cin >> arr[i] ;
     }
    // Selection sorting algorithm
-
+    int count =0;
     for (int i = 0; i < n; i++)
     {
         int min_index = arr[i];
@@ -35,10 +35,12 @@ int main(){
             int temp = arr[i];
             arr[i] = arr[min_index];
             arr[min_index] = temp;
+            count++;
         }
         
     }
     // Printing the elements of the array
+    cout << "Count : " << count << endl;
     for (int i = 0; i < n; i++)
     {
         cout<< arr[i]<< " ";
