@@ -1,18 +1,7 @@
 #include<stdio.h>
 #define Vertices 4
+int adjMatrix[Vertices][Vertices];
 
-// initialize matrix 0
-void init(int adjMatrix[][Vertices]){
-    for (int i = 0; i < Vertices; i++)
-    {
-        for (int j = 0; j < Vertices; j++)
-        {
-            adjMatrix[i][j] = 0;
-        }
-        
-    }
-    
-}
 
 void insertEdge(int adjM[][Vertices], int i, int j){
     adjM[i][j] = 1;
@@ -35,9 +24,6 @@ void print(int adjM[][Vertices]){
 
 int main(){
 
-    int adjMatrix[Vertices][Vertices];
-
-    init(adjMatrix);
     insertEdge(adjMatrix, 0, 1);  
     insertEdge(adjMatrix, 0, 2);  
     insertEdge(adjMatrix, 1, 2);  
