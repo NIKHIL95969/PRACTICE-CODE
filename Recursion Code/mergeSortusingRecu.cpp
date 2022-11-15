@@ -2,6 +2,8 @@
 using namespace std;
 const int N = 1e3+10;
 int a[N];
+
+
 void merge(int s, int mid, int e){
     int l_s = mid-s+1;
     int r_s = e-mid;
@@ -30,7 +32,7 @@ void merge(int s, int mid, int e){
         }
     }
     
-     
+     // done
 }
 void mergeSort(int l, int e){
     // base condition
