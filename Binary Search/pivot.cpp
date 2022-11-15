@@ -23,7 +23,7 @@ int pivotArr(int arr[], int n){
     return s;
 }
 int main(){
-    int arr[5] = {8, 7, 10 , 1 , 3};
-    cout << "Pivot is present at index " << pivotArr(arr, 5)<<endl;
+    int arr[6] = {1,2,6,9,10,44};
+    cout << "Pivot is present at index " << pivotArr(arr, 6)<<endl;
     return 0;
 }
