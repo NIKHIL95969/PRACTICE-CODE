@@ -5,7 +5,11 @@ In first loop we have first index 0 and we have to put min element form the arra
 
 #include<bits/stdc++.h>
 using namespace std;
-
+void swap(int *a, int *b){
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
 int main(){
 
     int n;
@@ -16,11 +20,12 @@ int main(){
     {
         cin >> arr[i] ;
     }
+
    // Selection sorting algorithm
     int count =0;
     for (int i = 0; i < n; i++)
     {
-        int min_index = arr[i];
+        int min_index = i;
         for (int k = i+1; k < n; k++)
         {
             if (arr[k]<arr[min_index])
@@ -30,15 +35,10 @@ int main(){
             }
             
         }
-        if (arr[i]< arr[min_index])
-        {
-            int temp = arr[i];
-            arr[i] = arr[min_index];
-            arr[min_index] = temp;
-            count++;
-        }
-        
+
+        swap(&arr[i],&arr[min_index]);
     }
+
     // Printing the elements of the array
     cout << "Count : " << count << endl;
     for (int i = 0; i < n; i++)
