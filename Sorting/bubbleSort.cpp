@@ -5,17 +5,17 @@ int main(){
 
     int arr[] = {3,6,1,0,-1,31,-4,30,15};
     int n = sizeof(arr)/sizeof(arr[0]);
+
+    // Bubble Sort 
     for (int i = 0; i < n-1; i++)
     {
-        int minV = i;
         for (int j = i+1; j < n; j++)
         {
-            if (arr[j]<arr[minV])
+            if (arr[j]>arr[i])
             {
-                minV = j;
+                swap(arr[i],arr[j]);
             }
         }
-        swap(arr[i],arr[minV]);
     }
     
     for (int i = 0; i < n; i++)
