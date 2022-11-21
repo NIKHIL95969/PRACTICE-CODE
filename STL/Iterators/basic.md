@@ -14,7 +14,8 @@ Iterators are used to point at the memory location.
 2. end() :- This function is used to return the after end position of the containe
 
 ## auto iterator
-> auto var is  a dynamic determine what the datatype of var
+> auto var = 4;  
+- auto iterator is  a dynamic iterator which determine what the datatype of var
 
 
 
