@@ -17,7 +17,10 @@ int main(){
         }
         swap(arr[i],arr[minV]);
     }
-    
+    /*
+    Best, average and worst case time complexity: n^2 which is independent of distribution of data. 
+    */
+
     for (int i = 0; i < n; i++)
     {
         cout << arr[i] << " ";

@@ -11,7 +11,7 @@ int main(){
     {
         for (int j = i+1; j < n; j++)
         {
-            if (arr[j]>arr[i])
+            if (arr[j]<arr[i])
             {
                 swap(arr[i],arr[j]);
             }
@@ -22,7 +22,9 @@ int main(){
     {
         cout << arr[i] << " ";
     }
-    
+    // best case = O(n) array is already sorted
+    // worst case = O(n^2)
+    // stable algorithms
 
     return 0;
 }

@@ -71,3 +71,6 @@ int main(){
 	cout << endl;
 	return 0;
 }
+/*
+Best, average and worst case time complexity: nlogn which is independent of distribution of data.
+*/
