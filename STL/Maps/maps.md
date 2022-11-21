@@ -10,4 +10,6 @@
 - map<int,int> mp;
 
 ## NOTE:
-- insertion in map take O(log n) time
+- insertion and acces in map take O(log n) time
+
+![map code](map.png)
