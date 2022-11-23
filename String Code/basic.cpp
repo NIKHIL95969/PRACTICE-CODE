@@ -31,9 +31,14 @@ bool canConstruct(string ransomNote, string magazine) {
         return true;
     }
 int main(){   
-    string ransomNote ="aba" ;
-    string magazine =" azcab";
-    canConstruct(ransomNote, magazine);
-    cout << "done";
+    string ransomNote ="eba" ;
+    string magazine =" aba";
+    // canConstruct(ransomNote, magazine);
+    
+    if(ransomNote==magazine)
+        cout << "done";
+    else{
+        cout << "v";
+    }
     return 0;
 }
