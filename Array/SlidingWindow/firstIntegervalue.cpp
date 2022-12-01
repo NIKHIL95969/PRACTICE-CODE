@@ -1,42 +1,41 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-vector<int> printFirstNegativeInteger(int A[],int N,int k) {
-        // cout << "enter" << endl;
-    vector<int> ans;
-    int j =0;
-    queue<int> li;
-    for(int i = 0; i<N && j<N; i++){
-        if((j-i+1)<k){
-            // cout << "Uder 1st "<< A[j] << endl;
-            if(A[j]<0) {
-                li.push(A[j]);
-            }
-            j++;
-        }
-        else if(j-i+1==k){
-            cout << "ans size" <<li.size();
-            if(li.size()==0){
-                ans.push_back(0);
-            }
-            else{
-                // cout << "enter" << endl;
-                ans.push_back(li.front());
-                if(A[i]==li.front()) {
-                    li.pop();
-                }
-            }
-            j++;
-            i++;
-        }
-        
-    }
-    // 
-    for(auto it : ans){
-        cout<< it <<" ";
-    }
 
-    return ans;              
+
+vector<long long> printFirstNegativeInteger(long long int A[],
+                                             long long int N, long long int K) 
+{
+        vector<long long> ans;
+        queue<long long> q;
+        
+        long long int i=0,j=0;
+        
+        while(j<N){
+           
+            if(A[j]<0){
+                q.push(A[j]);
+            }
+            
+            if(j-i+1<K){
+                j++;
+            }
+            else if(j-i+1==K){
+                
+                if(q.empty()){
+                    ans.push_back(0);
+                }
+                else{
+                    ans.push_back(q.front());
+                    
+                    if(A[i]==q.front()){
+                        q.pop();
+                    }
+                }
+                i++,j++;
+            }
+        }
+        return ans;
  }
 
 int main(){
