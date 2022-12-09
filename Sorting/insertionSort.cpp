@@ -6,7 +6,7 @@ int main(){
     int arr[] = {3,6,1,0,-1,31,-4,30,15};
     int n = sizeof(arr)/sizeof(arr[0]);
 
-    // Bubble Sort 
+    // insertion sort
     for (int i = 1; i < n-1; i++)
     {
         int temp = arr[i];
