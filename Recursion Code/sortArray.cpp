@@ -39,7 +39,7 @@ void printA(vector<int> v){
 
 int main() {
 
-    vector<int> v = {3,2,1,4,0,9};
+    vector<int> v = {3,2,1,4,0,-1,100,5,3,1000,9};
     printA(v);
     cout << endl;
 
